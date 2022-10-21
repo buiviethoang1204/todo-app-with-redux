@@ -11,3 +11,4 @@ export const todoRemainingSelector = createSelector(
             return todo.name.includes(searchText)
         })
     })
+    

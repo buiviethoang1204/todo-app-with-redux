@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { addTodo } from "../../redux/actions";
 
-export default createSlice({
+export const todoSlice = createSlice({
     name: 'todoList',
     initialState: [],
     reducers: {
@@ -8,4 +9,6 @@ export default createSlice({
             state.push(action.payload)
         }
     }
-})
+})  
+
+export default addTodo;

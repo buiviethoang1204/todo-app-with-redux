@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import filtersSlice from './filtersSlice'
+import searchFilter from './filtersSlice'
 
 function Filters() {
     const [searchText, setSearchText] = useState('')
@@ -9,7 +9,7 @@ function Filters() {
 
     const handleSearchChange = (e) => {
         setSearchText(e.target.value)
-        dispatch(filtersSlice.actions.searchFilter(e.target.value))
+        dispatch(searchFilter(e.target.value))
     }
 
     return (

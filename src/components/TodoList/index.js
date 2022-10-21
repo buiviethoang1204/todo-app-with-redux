@@ -2,21 +2,20 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { v4 as uuid } from 'uuid'
 import { todoRemainingSelector } from '../../redux/selectors'
-import todoSlice from './todoSlice'
+import addTodo from './todoSlice'
 
 function TodoList() {
     const inputRef = useRef()
+    const [todoName, setTodoName] = useState('')
+    const todoList = useSelector(todoRemainingSelector)
+    const dispatch = useDispatch()
 
     useEffect(() => {
         inputRef.current.focus()
     }, [])
 
-    const [todoName, setTodoName] = useState('')
-    const todoList = useSelector(todoRemainingSelector)
-    const dispatch = useDispatch()
-
     const handleAddBtnCkick = () => {
-        dispatch(todoSlice.actions.addTodo({
+        dispatch(addTodo({
             id: uuid(),
             name: todoName,
             completed: false    
@@ -29,7 +28,7 @@ function TodoList() {
     }
 
     return (
-        <div>
+        <>
             <ul>
                 {todoList.map(todo => (
                     <li key={todo.id}>{todo.name}</li>
@@ -51,7 +50,7 @@ function TodoList() {
                 />
                 <button onClick={handleAddBtnCkick} style={{padding:10, cursor:'pointer'}}>Add</button>
             </div> 
-        </div>
+        </>
         
     )
 }
