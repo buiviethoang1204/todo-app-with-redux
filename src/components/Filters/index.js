@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import searchFilter from './filtersSlice'
+import { searchFilter } from './filtersSlice'
 
 function Filters() {
     const [searchText, setSearchText] = useState('')

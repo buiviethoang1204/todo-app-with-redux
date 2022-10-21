@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { v4 as uuid } from 'uuid'
 import { todoRemainingSelector } from '../../redux/selectors'
-import addTodo from './todoSlice'
+import { addTodo } from './todoSlice'
 
 function TodoList() {
     const inputRef = useRef()

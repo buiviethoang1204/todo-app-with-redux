@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { searchFilter } from "../../redux/actions";
 
 export const filtersSlice = createSlice({
     name: 'filter',
@@ -14,4 +13,5 @@ export const filtersSlice = createSlice({
     }
 })
 
-export default searchFilter;
+export const { searchFilter } = filtersSlice.actions;
+export default filtersSlice.reducer;
